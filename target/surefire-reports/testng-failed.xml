@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [by.chebotar.DAO.ShapeControllerTest]">
+  <test thread-count="5" verbose="0" name="Command line test(failed)">
+    <classes>
+      <class name="by.chebotar.DAO.ShapeControllerTest">
+        <methods>
+          <include name="getAll"/>
+        </methods>
+      </class> <!-- by.chebotar.DAO.ShapeControllerTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [by.chebotar.DAO.ShapeControllerTest] -->

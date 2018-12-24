@@ -1,0 +1,11 @@
+by\chebotar\service\entity\CubeSquare.class
+by\chebotar\service\Observer.class
+by\chebotar\bean\Observable.class
+by\chebotar\DAO\CubeController.class
+by\chebotar\bean\Point.class
+by\chebotar\bean\Shape.class
+by\chebotar\bean\Cube.class
+by\chebotar\service\entity\Option.class
+by\chebotar\DAO\Warehouse.class
+by\chebotar\service\entity\CubeVolume.class
+by\chebotar\DAO\AbstractController.class
