@@ -21,7 +21,7 @@ public class Cube extends Shape implements Observable{
     this.point = point;
     this.edgeOfTheCube = edgeOfTheCube;
     staticID++;
-    notifyObserver();
+    notifyObserver();/////////////////////////////////
   }
 
   public Cube() {

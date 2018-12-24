@@ -2,12 +2,15 @@ package by.chebotar.service.entity;
 
 import by.chebotar.bean.Cube;
 import by.chebotar.dao.ShapeDAOImpl;
-import by.chebotar.dao.Warehouse;
 import by.chebotar.service.Observer;
 import by.chebotar.bean.Shape;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ShapeSquare extends ShapeOption implements Observer {
-  private ShapeDAOImpl shapeDAO = new ShapeDAOImpl();
+
+  private static final Logger LOGGER = LogManager.getLogger(ShapeSquare.class);
+  private ShapeDAOImpl shapeDAO = ShapeDAOImpl.getINSTANCE();
 
   @Override
   public void update(Long ID) {
@@ -21,6 +24,6 @@ public class ShapeSquare extends ShapeOption implements Observer {
     } else {
 
     }
-    return 0;
+    return -1;
   }
 }

@@ -16,7 +16,23 @@ public class ShapeDAOImpl implements ShapeDAO{
 
   private static final Logger LOGGER = LogManager.getLogger(ShapeDAOImpl.class);
   private static final Warehouse warehouse = Warehouse.getInstance();
-  private Map<Long, Shape> data = new HashMap<Long, Shape>();
+  public static ShapeDAOImpl INSTANCE = null;
+  private static Map<Long, Shape> data = new HashMap<Long, Shape>();
+
+  private ShapeDAOImpl(){
+
+  }
+
+  public static ShapeDAOImpl getINSTANCE() {
+    if(INSTANCE == null){
+      synchronized (ShapeDAOImpl.class) {
+        if (INSTANCE == null) {
+          INSTANCE = new ShapeDAOImpl();
+        }
+      }
+    }
+    return INSTANCE;
+  }
 
   public Map<Long, Shape> getAll() {
     return this.data;
@@ -25,7 +41,7 @@ public class ShapeDAOImpl implements ShapeDAO{
   @Override
   public void put(Shape entity) {
     this.data.put(entity.getID(), entity);
-
+    warehouse.addShape(entity);
   }
 
   @Override
@@ -35,6 +51,7 @@ public class ShapeDAOImpl implements ShapeDAO{
 
   @Override
   public Shape delete(Long id) {
+    warehouse.deleteShape(id);
     return this.data.remove(id);
   }
 
@@ -43,6 +60,7 @@ public class ShapeDAOImpl implements ShapeDAO{
     data = new HashMap<Long, Shape>();
     for (Shape shape : list) {
       data.computeIfAbsent(shape.getID(), k -> data.put(shape.getID(),shape));
+      warehouse.addShape(shape);
     }
     return data;
   }
