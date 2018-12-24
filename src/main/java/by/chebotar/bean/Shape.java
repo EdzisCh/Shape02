@@ -1,6 +1,6 @@
 package by.chebotar.bean;
 
-public abstract class Shape{
+public abstract class Shape implements Observable{
   private String name;
   private long ID;
   private Point xPoint;

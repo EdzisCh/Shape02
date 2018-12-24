@@ -1,5 +1,7 @@
 package by.chebotar.service;
 
+import by.chebotar.bean.Shape;
+
 public interface Observer {
-  void update(Long ID);
+  void update(Shape shape);
 }

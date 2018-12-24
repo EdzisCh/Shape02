@@ -82,7 +82,7 @@ public class Cube extends Shape implements Observable{
   }
 
   public void notifyObserver() {
-    this.observers.forEach(observer->observer.update(this.ID));
+    this.observers.forEach(observer->observer.update(this));
   }
 
   public void removeObserver(Observer observer) {
