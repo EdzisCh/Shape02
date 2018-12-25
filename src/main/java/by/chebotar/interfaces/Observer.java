@@ -1,4 +1,4 @@
-package by.chebotar.service;
+package by.chebotar.interfaces;
 
 import by.chebotar.bean.Shape;
 

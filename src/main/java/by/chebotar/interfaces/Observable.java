@@ -1,6 +1,6 @@
-package by.chebotar.bean;
+package by.chebotar.interfaces;
 
-import by.chebotar.service.Observer;
+import by.chebotar.interfaces.Observer;
 
 public interface Observable {
 

@@ -1,6 +1,7 @@
 package by.chebotar.bean;
 
-import by.chebotar.service.Observer;
+import by.chebotar.interfaces.Observable;
+import by.chebotar.interfaces.Observer;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;

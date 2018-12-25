@@ -1,5 +1,7 @@
 package by.chebotar.bean;
 
+import by.chebotar.interfaces.Observable;
+
 public abstract class Shape implements Observable{
   private String name;
   private long ID;

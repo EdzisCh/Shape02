@@ -1,7 +1,6 @@
 package by.chebotar.dao;
 
 import by.chebotar.bean.Shape;
-import by.chebotar.service.Observer;
 import by.chebotar.service.entity.ShapeSquare;
 import java.util.HashMap;
 import java.util.Map;

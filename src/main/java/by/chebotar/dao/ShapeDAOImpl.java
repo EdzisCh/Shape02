@@ -1,14 +1,9 @@
 package by.chebotar.dao;
 
-import by.chebotar.bean.Cube;
-import by.chebotar.bean.Observable;
 import by.chebotar.bean.Shape;
-import by.chebotar.service.Observer;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

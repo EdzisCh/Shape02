@@ -2,7 +2,7 @@ package by.chebotar.service.entity;
 
 import by.chebotar.bean.Cube;
 import by.chebotar.dao.Warehouse;
-import by.chebotar.service.Observer;
+import by.chebotar.interfaces.Observer;
 import by.chebotar.bean.Shape;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
