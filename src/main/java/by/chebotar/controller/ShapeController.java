@@ -9,7 +9,6 @@ import by.chebotar.bean.Shape;
 public class ShapeController {
 
   private  final ShapeService shapeService = new ShapeService();
-  private static final Logger LOGGER = LogManager.getLogger(ShapeController.class);
 
   public void putShapes(Shape... shapes){
     shapeService.addShapes(shapes);
@@ -19,5 +18,12 @@ public class ShapeController {
     return shapeService.getShapeByID(ID);
   }
 
+  public Shape getShape(String name){
+    return shapeService.getShapeByName(name);
+  }
+
+  public String getOptions(Long ID){
+    return shapeService.getOptions(ID);
+  }
 
 }

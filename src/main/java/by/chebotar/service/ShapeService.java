@@ -42,14 +42,17 @@ public class ShapeService {
     return neededShape;
   }
 
-  public Shape getShapeBySquare(double square){
-    Map<Long, Double> tempMap = warehouse.getAllSquares();
-    Shape neededShape = null;
-    for (long i = 0; i < tempMap.size(); i++) {
-      if (tempMap.get(i) == square){
-        neededShape = shapeDAO.getEntityById(i);
-      }
-    }
-    return neededShape;
+  public String getOptions(Long ID){
+    double square = warehouse.getSquareByID(ID);
+    double volume = warehouse.getVolumeByID(ID);
+    double perimeter = warehouse.getPerimeterByID(ID);
+    StringBuilder stringBuilder = new StringBuilder("Options of " + shapeDAO.getEntityById(ID).getName());
+    stringBuilder.append("; Square: ");
+    stringBuilder.append(square);
+    stringBuilder.append("; Volume: ");
+    stringBuilder.append(volume);
+    stringBuilder.append("; Perimeter: ");
+    stringBuilder.append(perimeter);
+    return  stringBuilder.toString();
   }
 }
