@@ -1,4 +1,4 @@
-package by.chebotar.service.entity;
+package by.chebotar.service.option;
 
 import by.chebotar.bean.Cube;
 import by.chebotar.dao.Warehouse;

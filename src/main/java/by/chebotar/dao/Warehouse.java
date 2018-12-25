@@ -1,15 +1,22 @@
 package by.chebotar.dao;
 
 import by.chebotar.bean.Shape;
-import by.chebotar.service.entity.ShapeSquare;
+import by.chebotar.service.option.ShapePerimeter;
+import by.chebotar.service.option.ShapeSquare;
+import by.chebotar.service.option.ShapeVolume;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Warehouse{
 
-  ShapeSquare shapeSquare = new ShapeSquare();
-
   public static  Warehouse INSTANCE = null;
+  private static final Logger LOGGER = LogManager.getLogger(Warehouse.class);
+
+  private ShapeSquare shapeSquare = new ShapeSquare();
+  private ShapeVolume shapeVolume = new ShapeVolume();
+  private ShapePerimeter shapePerimeter = new ShapePerimeter();
   private static Map<Long, Double> square = new HashMap<Long, Double>();
   private static Map<Long, Double> volume = new HashMap<Long, Double>();
   private static Map<Long, Double> perimeter = new HashMap<Long, Double>();
@@ -33,16 +40,32 @@ public class Warehouse{
     return square.get(ID);
   }
 
-  public void addShape(Shape shape){
-    square.put(shape.getID(), shapeSquare.calculateOption(shape));
-    volume.put(shape.getID(), shapeSquare.calculateOption(shape));///////////////////////
-    perimeter.put(shape.getID(), shapeSquare.calculateOption(shape));
+  public Double getVolumeByID(Long ID){
+    return volume.get(ID);
   }
 
-  public void deleteShape(Long ID){
-    square.remove(ID);
-    volume.remove(ID);
-    perimeter.remove(ID);
+  public Double getPerimeterByID(Long ID){
+    return perimeter.get(ID);
+  }
+
+  public void addShape(Shape shape){
+    square.put(shape.getID(), shapeSquare.calculateOption(shape));
+    volume.put(shape.getID(), shapeVolume.calculateOption(shape));
+    perimeter.put(shape.getID(), shapePerimeter.calculateOption(shape));
+  }
+
+  public boolean deleteShape(Long ID){
+    boolean flag = false;
+    if (square.get(ID) != null && volume.get(ID) != null && perimeter.get(ID) != null) {
+      square.remove(ID);
+      volume.remove(ID);
+      perimeter.remove(ID);
+      flag = true;
+    } else {
+      LOGGER.warn("Try to delete shape that does not exist in Warehouse");
+      flag = false;
+    }
+    return flag;
   }
 
   public Map<Long, Double> getAllSquares(){

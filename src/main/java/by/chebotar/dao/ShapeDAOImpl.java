@@ -45,9 +45,15 @@ public class ShapeDAOImpl implements ShapeDAO{
   }
 
   @Override
-  public Shape delete(Long id) {
-    warehouse.deleteShape(id);
-    return this.data.remove(id);
+  public boolean delete(Long id) {
+    if(getEntityById(id) != null) {
+      warehouse.deleteShape(id);
+      this.data.remove(id);
+    } else {
+      LOGGER.warn("Try to delete shape that doesn`t exist");
+      return false;
+    }
+    return true;
   }
 
   @Override

@@ -8,6 +8,6 @@ public interface ShapeDAO {
   Map<Long, Shape> getAll();
   void put(Shape entity);
   Shape getEntityById(Long id);
-  Shape delete(Long id);
+  boolean delete(Long id);
   Map<Long, Shape> createNewMap(List<Shape> list);
 }

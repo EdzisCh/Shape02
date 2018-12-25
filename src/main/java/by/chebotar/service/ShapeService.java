@@ -3,7 +3,7 @@ package by.chebotar.service;
 import by.chebotar.dao.ShapeDAOImpl;
 import by.chebotar.dao.Warehouse;
 import by.chebotar.bean.Shape;
-import by.chebotar.service.entity.ShapeSquare;
+import by.chebotar.service.option.ShapeSquare;
 import java.util.Map;
 
 public class ShapeService {
@@ -20,9 +20,11 @@ public class ShapeService {
     }
   }
 
-  public void deleteShape(Shape shape){
-    shapeDAO.delete(shape.getID());
+  public boolean deleteShape(Shape shape){
+    boolean flag = false;
+    flag = shapeDAO.delete(shape.getID());
     warehouse.deleteShape(shape.getID());
+    return flag;
   }
 
   public Shape getShapeByID(Long ID){
