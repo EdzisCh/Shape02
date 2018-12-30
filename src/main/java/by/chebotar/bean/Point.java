@@ -36,7 +36,7 @@ public class Point {
     Point point = (Point) obj;
     if(this.x != point.getX()){
       return false;
-    } else if(this.x != point.getY()){
+    } else if(this.y != point.getY()){
       return false;
     }
     return true;

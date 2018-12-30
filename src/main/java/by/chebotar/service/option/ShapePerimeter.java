@@ -21,7 +21,7 @@ public class ShapePerimeter extends ShapeOption implements Observer{
   @Override
   public double calculateOption(Shape shape) {
     if (shape instanceof Cube){
-      return shape.getEdge()*4;
+      return shape.getEdge()*12;              //cube have 12 edges
     } else {
       LOGGER.warn("No operation realized for this type of Shape");
     }

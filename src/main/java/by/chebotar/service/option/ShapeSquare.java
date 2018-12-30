@@ -20,7 +20,7 @@ public class ShapeSquare extends ShapeOption implements Observer {
   @Override
   public double calculateOption(Shape shape) {
     if (shape instanceof Cube){
-      return Math.pow(shape.getEdge(),2);
+      return Math.pow(shape.getEdge(),2)*6;  //cube have 6 brinks
     } else {
       LOGGER.warn("No operation realized for this type of Shape");
     }

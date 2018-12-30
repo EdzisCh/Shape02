@@ -1,0 +1,3 @@
+13:20:56.198 [main] WARN  by.chebotar.dao.ShapeDAOImpl - Try to delete shape that doesn`t exist
+13:39:52.655 [main] WARN  by.chebotar.dao.Warehouse - Try to delete shape that does not exist in Warehouse
+13:45:35.936 [main] INFO  by.chebotar.service.ShapeService - Options of CubeWithoutName; Square: 0.0; Volume: 0.0; Perimeter: 0.0

@@ -21,9 +21,10 @@ public class ShapeService {
   }
 
   public boolean deleteShape(Shape shape){
-    boolean flag = false;
-    flag = shapeDAO.delete(shape.getID());
-    warehouse.deleteShape(shape.getID());
+    boolean flag = shapeDAO.delete(shape.getID());
+    if(flag == true) {
+      flag = warehouse.deleteShape(shape.getID());
+    }
     return flag;
   }
 
